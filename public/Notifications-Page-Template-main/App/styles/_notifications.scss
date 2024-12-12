@@ -1,0 +1,194 @@
+@import "./mixins";
+
+.notifications-container{
+    background-color: $white;
+    border-radius: 13px;
+    padding: 30px;
+    max-width: 731px;
+
+    @include breakpoint-down(small){
+        border-radius: 0;
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    .header{
+
+        .title{
+            font-weight: 800;
+            font-size: 19px;
+
+            @include breakpoint-down(galaxy-fold){
+                font-size: 13px;
+            }
+
+            .unread-notifications-number{
+                color: $white;
+                background-color: $primary-blue;
+                padding: 2px 13px;
+                border-radius: 5px;
+                margin-left: 12px;
+
+                @include breakpoint-down(galaxy-fold){
+                    font-size: 12px;
+                    padding: 2px 10px;
+                    margin-left: 5px;
+                }
+            }
+        }
+
+        .mark-as-read{
+            .mark-as-read-button{
+                color: $dark-grayish-blue;
+                text-decoration: none;
+                transition: all ease-in-out 200ms;
+
+                @include breakpoint-down(galaxy-fold){
+                    font-size: 10px;
+                }
+
+                &:hover{
+                    color: $primary-blue;
+                }
+            }
+
+        }
+    }
+
+    .notifications{
+        margin: 10px 0;        
+        .single-notification-box{
+            //background-color: $light-grayish-blue-1;
+            padding: 17px;
+            border-radius: 7px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border: none;
+        
+            .profile-picture{
+                width: 45px;
+                height: 45px;
+                padding: 0;
+
+                img{
+                    height: 100%;
+                }
+            }
+
+            .clickable-image{
+                border: none;
+                border-radius: 6px;
+
+                &:hover{
+                    outline:2px solid $light-grayish-blue-1;
+                    outline-offset: 2px;
+                    cursor: pointer;
+                }
+            }
+
+            .notification-text{
+                padding: 0 0 0 14px;
+                
+                @include breakpoint-down(small){
+                    width: 85%;
+                    padding: 0 14px 0 14px;
+                }
+
+                @include breakpoint-down(x-small){
+                    width: 78%;
+                    padding: 0 14px 0 14px;
+                }
+
+                .link{
+                    text-decoration: none;
+                    font-weight: 800;
+                    color: $dark-grayish-blue;
+                    transition: all ease-in-out 200ms;
+                    margin-right: 5px;
+                    &:hover{
+                        color: $primary-blue;
+                    }
+                }
+
+                .name{
+                    color: #000000;
+                }
+
+                
+
+                .description{
+                    color: $dark-grayish-blue;
+                    margin-right: 5px;
+                }
+
+                .time{
+                    color: $grayish-blue;
+
+                    @include breakpoint-down(small){
+                        margin-top: 5px;
+                    }
+                }
+
+                .private-message{
+                    padding: 20px;
+                    border: 1px solid $light-grayish-blue-1;
+                    border-radius: 7px;
+                    margin-top: 10px;
+                    color: $dark-grayish-blue;
+                    transition: all ease-in-out 200ms;
+
+                    @include breakpoint-down(small){
+                        padding: 15px;
+                    }
+
+                    &:hover{
+                        background-color: $light-grayish-blue-1;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .comment{
+                @include breakpoint-down(small){
+                    width: 70%;
+                }
+
+                @include breakpoint-down(x-small){
+                    width: 69%;
+                }
+
+                @include breakpoint-down(galaxy-fold){
+                    width: 55%;
+                }
+            }
+        }
+
+        .unread{
+            background-color: $very-light-grayish-blue;
+
+            .unread-symbol{
+                font-size: 20px;
+                color: $primary-red;
+                display: inline;
+
+                @include breakpoint-down(small){
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .read{
+            background-color: none;
+
+            .unread-symbol{
+                display: none;
+            }
+        }
+    }
+}
+
+
+.attribution{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
